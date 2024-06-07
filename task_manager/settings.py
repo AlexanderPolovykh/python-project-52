@@ -84,7 +84,7 @@ DATABASES = {
     "default": dj_database_url.config(
         # Replace this value with your local database's connection string.
         # default="postgresql://postgres:postgres@localhost:5432/task_manager",
-        default="postgresql://localhost/task_manager",
+        default="postgresql://polovykh:123@localhost/hexlet",
         conn_max_age=600,
     )
     # "default": {
