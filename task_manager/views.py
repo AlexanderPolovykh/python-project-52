@@ -1,5 +1,14 @@
-from django.http import HttpResponse
+# from django.http import HttpResponse
+from django.shortcuts import render
 
 
 def index(request):
-    return HttpResponse("Hello from Task Manager!")
+    return render(
+        request,
+        "index.html",
+        context={
+            "name": "Task Manager",
+        },
+    )
+
+    # return HttpResponse("Hello from Task Manager!")
