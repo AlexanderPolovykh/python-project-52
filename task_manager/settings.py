@@ -27,7 +27,7 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv("DEBUG", "False")
+DEBUG = os.getenv("DEBUG", False)
 
 ALLOWED_HOSTS = [
     "webserver",
@@ -129,7 +129,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 # STATIC_URL = os.getenv("STATIC_URL")
-STATIC_URL = "static/"
+STATIC_URL = "/static/"
 
 if not DEBUG:
     # Tell Django to copy static assets into a path called `staticfiles` (this is specific to Render)
