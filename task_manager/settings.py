@@ -29,11 +29,10 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG", False)
 
-ALLOWED_HOSTS = [
-    "webserver",
-    "127.0.0.1",
-]
-
+ALLOWED_HOSTS = ["webserver", "127.0.0.1"]
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
 # Application definition
 
@@ -62,7 +61,7 @@ ROOT_URLCONF = "task_manager.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [BASE_DIR / 'task_manager/templates'],
+        "DIRS": [BASE_DIR / "task_manager/templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -84,7 +83,8 @@ WSGI_APPLICATION = "task_manager.wsgi.application"
 DATABASES = {
     "default": dj_database_url.config(
         # Replace this value with your local database's connection string.
-        default="postgresql://postgres:postgres@localhost:5432/task_manager",
+        # default="postgresql://postgres:postgres@localhost:5432/task_manager",
+        default="postgresql://localhost/task_manager",
         conn_max_age=600,
     )
     # "default": {
