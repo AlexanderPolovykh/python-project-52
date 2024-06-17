@@ -1,5 +1,5 @@
 # from django.http import HttpResponse
-# from django.shortcuts import render
+from django.shortcuts import render
 from django.contrib import messages
 from django.views.generic.base import TemplateView
 from django.views.generic import FormView
@@ -12,7 +12,7 @@ class HomePageView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        messages.set_level(self.request, messages.WARNING)
+        # messages.set_level(self.request, messages.WARNING)
         messages.info(self.request, "Hello from Task Manager!")
         return context
 
@@ -35,13 +35,14 @@ class DefaultFormView(GetParametersMixin, FormView):
     form_class = ContactForm
 
 
-# def index(request):
-#     return render(
-#         request,
-#         "index.html",
-#         context={
-#             "name": "Task Manager",
-#         },
-#     )
+def index(request):
+    return render(
+        request,
+        "index.html",
+        context={
+            "name": "Task Manager",
+        },
+    )
+
 
 # return HttpResponse("Hello from Task Manager!")
