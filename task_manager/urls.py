@@ -21,8 +21,8 @@ from task_manager import views
 
 urlpatterns = [
     # path("", views.HomePageView.as_view(), name="home"),
-    path("formset", views.DefaultFormsetView.as_view(), name="formset_default"),
-    path("form", views.DefaultFormView.as_view(), name="form_default"),
+    # path("formset", views.DefaultFormsetView.as_view(), name="formset_default"),
+    # path("form", views.DefaultFormView.as_view(), name="form_default"),
     path("", views.index, name="index"),
     path("admin/", admin.site.urls),
 ]
