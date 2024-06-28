@@ -17,12 +17,12 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
-from task_manager import views
+from task_manager.views import MainPageView
 
 urlpatterns = [
-    # path("", views.HomePageView.as_view(), name="home"),
+    path("", MainPageView.as_view(), name="main-page"),
+    path("login/", LoginPageView.as_view(), name="login-page"),
     # path("formset", views.DefaultFormsetView.as_view(), name="formset_default"),
-    # path("form", views.DefaultFormView.as_view(), name="form_default"),
-    path("", views.index, name="index"),
+    path("form", views.DefaultFormView.as_view(), name="form_default"),
     path("admin/", admin.site.urls),
 ]
