@@ -28,14 +28,14 @@ class MainPageView(TemplateView):
         # messages.info(self.request, "Hello from Task Manager!")
         return context
 
-class LoginPageView()
+class UsersListPageView()
 
-class GetParametersMixin:
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["layout"] = self.request.GET.get("layout", None)
-        context["size"] = self.request.GET.get("size", None)
-        return context
+# class GetParametersMixin:
+#     def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         context["layout"] = self.request.GET.get("layout", None)
+#         context["size"] = self.request.GET.get("size", None)
+#         return context
 
 
 # class DefaultFormsetView(GetParametersMixin, FormView):
@@ -46,22 +46,3 @@ class GetParametersMixin:
 # class DefaultFormView(GetParametersMixin, FormView):
 #     template_name = "form.html"
 #     form_class = ContactForm
-
-
-# def index(request):
-#     return render(
-#         request,
-#         "index.html",
-#         context={
-#             "brand": _("Task Manager"),
-#             "users": _("Users"),
-#             "input": _("Sign In"),
-#             "reg": _("Log In"),
-#             "hello": _("Hello from Hexlet!"),
-#             "about": _("Practical programming courses"),
-#             "info": _("To learn more"),
-#         },
-#     )
-
-
-# return HttpResponse("Hello from Task Manager!")
