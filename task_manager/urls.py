@@ -21,7 +21,7 @@ from task_manager.views import MainPageView
 
 urlpatterns = [
     path("", MainPageView.as_view(), name="main-page"),
-    path("users/", MainPageView.as_view(), name="main-page"),
+    # path("users/", MainPageView.as_view(), name="main-page"),
     # path("login/", LoginPageView.as_view(), name="login-page"),
     # path("formset", views.DefaultFormsetView.as_view(), name="formset_default"),
     # path("form", views.DefaultFormView.as_view(), name="form_default"),

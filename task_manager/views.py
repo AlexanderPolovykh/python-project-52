@@ -2,12 +2,12 @@
 # from django.shortcuts import render
 
 # from django.contrib import messages
-from django.views.generic.base import TemplateView
 
 # from django.views.generic import FormView
-from django.utils.translation import gettext as _
-
 # from .forms import ContactForm, ContactFormSet  # , FilesForm
+
+from django.utils.translation import gettext as _
+from django.views.generic.base import TemplateView
 
 
 class MainPageView(TemplateView):
@@ -28,7 +28,7 @@ class MainPageView(TemplateView):
         # messages.info(self.request, "Hello from Task Manager!")
         return context
 
-class UsersListPageView()
+# class UsersListPageView()
 
 # class GetParametersMixin:
 #     def get_context_data(self, **kwargs):

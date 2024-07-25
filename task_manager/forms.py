@@ -1,7 +1,6 @@
 from django import forms
 from django.contrib.admin.widgets import AdminSplitDateTime
 from django.forms import BaseFormSet, TextInput, formset_factory
-
 from django_bootstrap5.widgets import RadioSelectButtonGroup
 
 RADIO_CHOICES = (("1", "Radio 1"), ("2", "Radio 2"))
