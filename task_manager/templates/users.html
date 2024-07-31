@@ -1,0 +1,14 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+<h2>Пользователи</h2>
+<ul>
+    {% for user in user_list %}
+    <li>
+        {{ user.name }} 
+        {{ user.full_name }} 
+        {{ user.created_at }}
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

@@ -22,6 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 load_dotenv()
 
 SECRET_KEY = os.getenv("SECRET_KEY")
+DATABASE_URL = os.getenv("DATABASE_URL")
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
@@ -48,6 +49,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django_bootstrap5",
     "task_manager",
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
@@ -90,7 +92,7 @@ DATABASES = {
     "default": dj_database_url.config(
         # Replace this value with your local database's connection string.
         # default="postgresql://postgres:postgres@localhost:5432/task_manager",
-        default="postgresql://polovykh:123@localhost/hexlet",
+        default=DATABASE_URL,
         conn_max_age=600,
     )
     # "default": {
@@ -149,3 +151,11 @@ if not DEBUG:
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# print SQL queries in shell_plus
+# SHELL_PLUS_PRINT_SQL = True
+SHELL_PLUS_PRINT_SQL = False
+# Always use IPython for shell_plus
+SHELL_PLUS = 'ipython'
+# print SQL queries in shell_plus
+SHELL_PLUS_PRINT_SQL_TRUNCATE = None

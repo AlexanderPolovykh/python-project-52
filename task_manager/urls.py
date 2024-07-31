@@ -17,11 +17,11 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
-from task_manager.views import MainPageView
+from task_manager.views import MainPageView, UsersListPageView
 
 urlpatterns = [
     path("", MainPageView.as_view(), name="main-page"),
-    # path("users/", MainPageView.as_view(), name="main-page"),
+    path("users/", UsersListPageView.as_view(), name="users-page"),
     # path("login/", LoginPageView.as_view(), name="login-page"),
     # path("formset", views.DefaultFormsetView.as_view(), name="formset_default"),
     # path("form", views.DefaultFormView.as_view(), name="form_default"),

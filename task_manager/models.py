@@ -6,6 +6,9 @@ class User(models.Model):
     full_name = models.CharField(max_length=255)
     created_at = models.DateField()
 
+    class Meta:
+        db_table = "users"
+
     def __str__(self):
         return self.name
 

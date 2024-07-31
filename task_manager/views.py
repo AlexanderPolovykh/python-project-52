@@ -8,6 +8,8 @@
 
 from django.utils.translation import gettext as _
 from django.views.generic.base import TemplateView
+from django.views.generic import ListView
+from task_manager.models import User
 
 
 class MainPageView(TemplateView):
@@ -28,7 +30,13 @@ class MainPageView(TemplateView):
         # messages.info(self.request, "Hello from Task Manager!")
         return context
 
-# class UsersListPageView()
+
+class UsersListPageView(ListView):
+    # model = User
+    queryset = User.objects.order_by('-created_at')
+    template_name = "users.html"
+    context_object_name = "user_list"
+
 
 # class GetParametersMixin:
 #     def get_context_data(self, **kwargs):
