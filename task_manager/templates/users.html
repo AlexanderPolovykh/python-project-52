@@ -1,14 +1,33 @@
 {% extends 'base.html' %} 
 
 {% block content %}
-<h2>Пользователи</h2>
-<ul>
-    {% for user in user_list %}
-    <li>
-        {{ user.name }} 
-        {{ user.full_name }} 
-        {{ user.created_at }}
-    </li>
-    {% endfor %}
-</ul>
+<div class="container flex-grow-1">
+    <h1 class="my-4">Пользователи</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>{{ name }}</th>
+                <th>{{ full_name }}</th>
+                <th>{{ created_at }}</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in user_list %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.name }}</td>
+                <td>{{ user.full_name }}</td>
+                <td>{{ user.created_at }}</td>
+                <td>
+                    <a href="#">Изменить</a>
+                    <br />
+                    <a href="#">Удалить</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
 {% endblock %}
