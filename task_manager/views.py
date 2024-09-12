@@ -27,6 +27,12 @@ user_list_context = {
     "created_at": "Дата создания",
 }
 
+login_context = {
+    "input": "Вход",
+    "user_name": "Имя пользователя",
+    "password": "Пароль",
+    "log_in": "Войти",
+}
 
 class MainPageView(TemplateView):
     template_name = "index.html"
@@ -49,6 +55,15 @@ class UsersListPageView(ListView):
         context = super().get_context_data(**kwargs)
         context |= navbar_context
         context |= user_list_context
+        return context
+
+class LoginPageView(TemplateView):
+    template_name = "login.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context |= navbar_context
+        context |= login_context
         return context
 
 

@@ -23,4 +23,5 @@ CREATE TABLE users (
 INSERT INTO users (name, full_name, created_at) 
 VALUES 
     ('alex', 'test test', '2024-07-29 12:01'), 
-    ('swen', 'test2 test2', '2024-07-28 13:55');
+    ('swen', 'test2 test2', '2024-07-28 13:55'),
+    ('nick', 'test3 test3', '2024-07-30 03:15');

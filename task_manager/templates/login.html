@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container wrapper flex-grow-1">
+    <h1 class="my-4">{{ input }}</h1>
+
+    <form method="post">
+        <input
+            type="hidden"
+            name="csrfmiddlewaretoken"
+            value="wWU3p4JER6sxEg0N2KwfXOmfbZEHZa5yhIzCQG8biCeHHRUehTkmkFABfJHSTgbh"
+        />
+        <div class="mb-3">
+            <label class="form-label" for="id_username">{{ user_name }}</label
+            ><input
+                type="text"
+                name="username"
+                autofocus=""
+                autocapitalize="none"
+                autocomplete="username"
+                maxlength="150"
+                class="form-control"
+                placeholder="Имя пользователя"
+                required=""
+                id="id_username"
+            />
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="id_password">{{ password }}</label
+            ><input
+                type="password"
+                name="password"
+                autocomplete="current-password"
+                class="form-control"
+                placeholder="Пароль"
+                required=""
+                id="id_password"
+            />
+        </div>
+        <input class="btn btn-primary" type="submit" value="{{ log_in }}"/>
+    </form>
+</div>
+
+{% endblock %}
